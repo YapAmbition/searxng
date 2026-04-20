@@ -65,7 +65,7 @@ ui:
   hotkeys: default
   url_formatting: pretty
 outgoing:
-  request_timeout: 3.0
+  request_timeout: 8.0
   useragent_suffix: ""
   pool_connections: 100
   pool_maxsize: 20
@@ -105,6 +105,9 @@ plugins:
   searx.plugins.tracker_url_remover.SXNGPlugin:
     active: true
 
+  tech_boost.SXNGPlugin:
+    active: true
+
 
 categories_as_tabs:
   general:
@@ -128,10 +131,6 @@ engines:
     engine: bing_images
     shortcut: bii
 
-  - name: bing news
-    engine: bing_news
-    shortcut: bin
-
   - name: bing videos
     engine: bing_videos
     shortcut: biv
@@ -154,6 +153,166 @@ engines:
     categories: [it]
     engine: baidu
     shortcut: bdk
+
+  # Yandex
+  - name: yandex
+    engine: yandex
+    shortcut: ya
+    categories: [general]
+
+  - name: yandex images
+    engine: yandex_images
+    shortcut: yai
+    categories: [images]
+
+  # GitHub
+  - name: github
+    engine: github
+    shortcut: gh
+    categories: [it]
+
+  # Stack Overflow
+  - name: stackoverflow
+    engine: stackoverflow
+    shortcut: so
+    categories: [it]
+
+  # ArXiv
+  - name: arxiv
+    engine: arxiv
+    shortcut: ar
+    categories: [science]
+
+  # PyPI
+  - name: pypi
+    engine: pypi
+    shortcut: pypi
+    categories: [it]
+
+  # npm
+  - name: npm
+    engine: npm
+    shortcut: npm
+    categories: [it]
+
+  # 搜狗
+  - name: sogou
+    engine: sogou
+    shortcut: sg
+    categories: [general]
+
+  - name: sogou images
+    engine: sogou_images
+    shortcut: sgi
+    categories: [images]
+
+  - name: sogou videos
+    engine: sogou_videos
+    shortcut: sgv
+    categories: [videos]
+
+  # 哔哩哔哩
+  - name: bilibili
+    engine: bilibili
+    shortcut: bl
+    categories: [videos]
+
+  # 搜狗微信
+  - name: sogou wechat
+    engine: sogou_wechat
+    shortcut: sgw
+    categories: [general, news]
+
+  # 爱奇艺
+  - name: iqiyi
+    engine: iqiyi
+    shortcut: iq
+    categories: [videos]
+
+  # AcFun
+  - name: acfun
+    engine: acfun
+    shortcut: acf
+    categories: [videos]
+
+  # Steam
+  - name: steam
+    engine: steam
+    shortcut: stm
+    categories: [general]
+
+  # 夸克
+  - name: quark
+    quark_category: general
+    categories: [general]
+    engine: quark
+    shortcut: qk
+
+  - name: quark images
+    quark_category: images
+    categories: [images]
+    engine: quark
+    shortcut: qki
+
+  # 360搜索
+  - name: 360search
+    engine: 360search
+    shortcut: 360so
+    categories: [general]
+    timeout: 10.0
+
+  - name: 360search videos
+    engine: 360search_videos
+    shortcut: 360sov
+    categories: [videos]
+
+  # Docker Hub
+  - name: docker hub
+    engine: docker_hub
+    shortcut: dh
+    categories: [it]
+
+  # MDN
+  - name: mdn
+    shortcut: mdn
+    engine: json_engine
+    categories: [it]
+    paging: true
+    search_url: https://developer.mozilla.org/api/v1/search?q={query}&page={pageno}
+    results_query: documents
+    url_query: mdn_url
+    url_prefix: https://developer.mozilla.org
+    title_query: title
+    content_query: summary
+
+  # Hacker News
+  - name: hackernews
+    engine: hackernews
+    shortcut: hn
+    categories: [it]
+
+  # GitLab
+  - name: gitlab
+    engine: gitlab
+    base_url: https://gitlab.com
+    shortcut: gl
+    categories: [it]
+
+  # 货币转换
+  - name: currency
+    engine: currency_convert
+    shortcut: cc
+
+  # OpenStreetMap
+  - name: openstreetmap
+    engine: openstreetmap
+    shortcut: osm
+    categories: [map]
+
+  # 天气
+  - name: openmeteo
+    engine: open_meteo
+    shortcut: om
 
 doi_resolvers:
   oadoi.org: 'https://oadoi.org/'
